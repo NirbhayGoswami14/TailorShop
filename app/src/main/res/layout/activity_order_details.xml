@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.OrderDetailsActivity">
+
+
+
+    <LinearLayout
+        android:id="@+id/linear_holder_od"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp">
+        <TextView
+            android:id="@+id/txt_o_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/black"
+            android:text="Order #ab1059"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/txt_od_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Garima"
+                android:textSize="@dimen/_12ssp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order Date:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/txt_o_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2022-08-13"
+                android:textSize="@dimen/_12ssp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order Status:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/txt_o_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active"
+                android:textSize="@dimen/_12ssp"
+                android:layout_weight="4.5"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_contact_detail_holder"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/linear_holder_od"
+        app:layout_constraintBottom_toBottomOf="@id/linear_holder_od"
+        android:layout_marginEnd="@dimen/_10sdp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_12ssp"
+            android:layout_gravity="center"
+            android:text="Contact Details"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp">
+            <ImageView
+                android:id="@+id/img_call"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/ic_phone_forwarded"
+                android:padding="@dimen/_3sdp"/>
+            <ImageView
+                android:id="@+id/img_user_info"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/ic_user_name"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:padding="@dimen/_3sdp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/linear_holder_od"
+        android:layout_marginTop="@dimen/_20sdp">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/o_detail_img"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:src="@drawable/order_clothes"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/_20sdp"
+            tools:ignore="MissingConstraints" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/o_detail_img"
+            app:layout_constraintTop_toTopOf="@id/o_detail_img"
+            app:layout_constraintBottom_toBottomOf="@id/o_detail_img"
+            android:layout_marginStart="@dimen/_20sdp">
+            <TextView
+                android:id="@+id/txt_order_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blazer/Caot"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"/>
+            <TextView
+                android:id="@+id/txt_o_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_12ssp"
+                android:text="Price:120"
+                android:layout_marginTop="@dimen/_5sdp"/>
+            <TextView
+                android:id="@+id/txt_od_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_12ssp"
+                android:text="Delivery Date :2022-08-27"
+                android:layout_marginTop="@dimen/_5sdp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp">
+                <TextView
+                    android:id="@+id/txt_product_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Completed"
+                    android:textSize="@dimen/_12ssp"/>
+                <ImageView
+                    android:id="@+id/img_del"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/ic_delete"
+                    android:layout_marginStart="@dimen/_10sdp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="#776D6A6A"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraint_holder"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:text="View Bill"
+        android:gravity="center"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:background="@drawable/rounded_button_black"
+        app:layout_constraintTop_toBottomOf="@id/view1"
+        android:layout_marginTop="@dimen/_20sdp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

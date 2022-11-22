@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TailorShop</string>
+    <string name="enter_mobile_number">Mobile Number</string>
+    <string name="sign_up">Don\'t have an account? <font color="#000000"><b>Signup</b></font></string>
+    <string name="login">Already have an account? <font color="#000000"><b>Login</b></font></string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+    <string name="error">error</string>
+    <string name="button_retry">Retry</string>
+
+
+    <string name="google_map" translatable="false">
+        AIzaSyCRj0VMuGGRvT8c7fmRL1aplP5Z06ogb-Q
+    </string>
+    <string name="enter_name">Enter Name</string>
+</resources>

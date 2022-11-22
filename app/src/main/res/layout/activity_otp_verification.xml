@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.OtpVerificationActivity">
+
+    <ImageView
+        android:id="@+id/img_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/splash_top_img"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/splash_bg_top"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/app_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_45sdp"
+        android:tint="@color/purple_500"/>
+
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_top"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        style="@style/textsize"
+        android:text="Please wait, while we try to confirm your mobile number"/>
+    <LinearLayout
+        android:id="@+id/linear_otp_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt1"
+        android:layout_marginTop="@dimen/_25sdp">
+        <EditText
+            android:id="@+id/et_otp_1"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textSize="@dimen/_12ssp"
+            android:background="@drawable/rounded_otp_bg"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/_5sdp"
+            />
+
+        <EditText
+            android:id="@+id/et_otp_2"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textSize="@dimen/_12ssp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_otp_bg"
+           android:layout_marginStart="@dimen/_3sdp"
+            />
+
+        <EditText
+            android:id="@+id/et_otp_3"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textSize="@dimen/_12ssp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_otp_bg"
+            android:layout_marginStart="@dimen/_3sdp"
+            />
+
+        <EditText
+            android:id="@+id/et_otp_4"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textSize="@dimen/_12ssp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_otp_bg"
+            android:layout_marginStart="@dimen/_3sdp"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/txt_resend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resend Otp"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/linear_proceed"
+        app:layout_constraintBottom_toBottomOf="@id/linear_proceed"
+        android:layout_marginStart="@dimen/_15sdp"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/linear_proceed"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:background="@drawable/rounded_button_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_otp_holder"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/btn_proceed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proceed"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:drawableEnd="@drawable/ic_arrow_right"
+            android:drawableTint="@color/white"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
