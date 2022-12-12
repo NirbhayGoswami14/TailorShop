@@ -10,7 +10,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 public class APIClient {
     private static Retrofit retrofit;
     private static Retrofit retrofitScalar;
-    private static final String BASE_URL = "http://sigmas.in/tailor/";
+    public static final String BASE_URL = "http://sigmas.in/tailor/";
 
     private static HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
     private static OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();

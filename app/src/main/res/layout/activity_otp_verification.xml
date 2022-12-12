@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/_45sdp"
-        android:tint="@color/purple_500"/>
+        app:tint="@color/purple_500" />
 
 
     <TextView
@@ -60,6 +60,7 @@
             android:textSize="@dimen/_12ssp"
             android:background="@drawable/rounded_otp_bg"
             android:layout_weight="1"
+            android:inputType="number"
             android:layout_marginStart="@dimen/_5sdp"
             />
 
@@ -71,6 +72,7 @@
             android:maxLength="1"
             android:textSize="@dimen/_12ssp"
             android:layout_weight="1"
+            android:inputType="number"
             android:background="@drawable/rounded_otp_bg"
            android:layout_marginStart="@dimen/_3sdp"
             />
@@ -83,6 +85,7 @@
             android:maxLength="1"
             android:textSize="@dimen/_12ssp"
             android:layout_weight="1"
+            android:inputType="number"
             android:background="@drawable/rounded_otp_bg"
             android:layout_marginStart="@dimen/_3sdp"
             />
@@ -95,6 +98,7 @@
             android:maxLength="1"
             android:textSize="@dimen/_12ssp"
             android:layout_weight="1"
+            android:inputType="number"
             android:background="@drawable/rounded_otp_bg"
             android:layout_marginStart="@dimen/_3sdp"
             />
@@ -105,6 +109,7 @@
         android:layout_height="wrap_content"
         android:text="Resend Otp"
         android:textSize="@dimen/_15ssp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/linear_proceed"
         app:layout_constraintBottom_toBottomOf="@id/linear_proceed"

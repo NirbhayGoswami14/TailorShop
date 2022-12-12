@@ -187,6 +187,12 @@
                     android:text="Completed"
                     android:textSize="@dimen/_12ssp"/>
                 <ImageView
+                    android:id="@+id/img_edit"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/ic_baseline_edit_24"
+                    android:layout_marginStart="@dimen/_10sdp"/>
+                <ImageView
                     android:id="@+id/img_del"
                     android:layout_width="@dimen/_18sdp"
                     android:layout_height="@dimen/_18sdp"
@@ -210,6 +216,7 @@
         android:layout_marginTop="@dimen/_10sdp"/>
 
     <TextView
+        android:id="@+id/btn_bill"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_35sdp"
         android:text="View Bill"
@@ -222,5 +229,6 @@
         android:layout_marginEnd="@dimen/_20sdp"
         android:background="@drawable/rounded_button_black"
         app:layout_constraintTop_toBottomOf="@id/view1"
-        android:layout_marginTop="@dimen/_20sdp"/>
+        android:layout_marginTop="@dimen/_20sdp"
+        android:visibility="gone"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

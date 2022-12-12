@@ -4,8 +4,8 @@ public class WebServiceConstants {
     public static final String BASE_URL = "http://sigmas.in/tailor/index.php/api/Item/";
     public static final String BASE_URL_SHORT = "http://sigmas.in/";
     public static final String API_LOGIN = "user_login";
-    public static final String UPDATE="user_update_profile";
-    public static final String OTP = "user_sendotp";
+    public static final String UPDATE_PROFILE="user_update_profile";
+    public static final String SEND_OTP = "user_sendotp";
     public static final String VERIFY_OTP = "user_verify_otp";
     public static final String API_ADDREVIEW="user_add_reviews";
     public static final String GET_ORDERS="user_getorders";
@@ -14,6 +14,15 @@ public class WebServiceConstants {
     public static final String GET_ORDER_DETAILS="user_get_order_detail";
     public static final String DELETE_REVIEWS="user_delete_reviews";
     public static final String EDIT_REVIEWS="user_edit_reviews";
+    public static final String GET_PROFILE="user_get_profile_data";
+    public static final String GET_CATEGORIES="user_get_categories";
+    public static final String GET_ADDRESSES="user_get_addresses";
+    public static final String DEL_ADDRESSES="user_delete_address";
+    public static final String EDIT_ADDRESSES="user_update_address";
+    public static final String ADD_ADDRESS="user_add_new_address";
+    public static final String DEL_ORDERS="user_delete_order";
+
+
     // Add all API Constant Here
 
     public static class WebServiceParams {
@@ -36,6 +45,14 @@ public class WebServiceConstants {
         public static final String F_RATING="product_fitting_rating";
         public static final String O_RATING="order_creation_rating";
         public static final String REVIEW_ID="review_id";
+        public static final String ADDRESS1="address1";
+        public static final String ADDRESS2="address2";
+        public static final String CITY = "city";
+        public static final String PINCODE = "pincode";
+        public static final String STATE="state";
+
+
+
 
 
 
@@ -44,7 +61,6 @@ public class WebServiceConstants {
         public static final String ADDRESS = "address";
         public static final String MEASUREMENT = "measurement";
         public static final String PHONE_NO = "phone_no";
-        public static final String CITY = "city";
         public static final String PASSWORD = "password";
         public static final String DOB = "dob";
         public static final String FACE_IMG = "face_image";
@@ -57,7 +73,6 @@ public class WebServiceConstants {
         public static final String LONGITUDE = "longitude";
         public static final String AREA_NAME = "area_name";
         public static final String DELIVERY_ADDRESS = "delivery_address";
-        public static final String PINCODE = "pincode";
         public static final String COUNTRY = "country";
         public static final String LOGO = "logo";
         public static final String IMAGE = "image";

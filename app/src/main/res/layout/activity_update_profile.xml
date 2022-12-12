@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.UpdateProfileActivity">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -15,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/splash_top_img"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            tools:ignore="MissingConstraints" />
 
         <ImageView
             android:id="@+id/img_left"
@@ -23,7 +25,8 @@
             android:layout_height="wrap_content"
             android:src="@drawable/splash_bg_top"
             android:scaleType="fitXY"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription,MissingConstraints" />
 
         <ImageView
             android:id="@+id/img_logo"
@@ -64,6 +67,7 @@
             android:layout_marginEnd="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_15sdp"
             android:paddingStart="@dimen/_10sdp"
+            android:enabled="false"
             android:background="@drawable/rounded_edit_text"/>
 
         <EditText
@@ -146,17 +150,33 @@
             android:layout_marginBottom="@dimen/_30sdp"
             />
         <TextView
-            android:id="@+id/btn_address"
+        android:id="@+id/btn_address"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35sdp"
+        android:text="Delivery Address"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@id/et_signUp_num"
+        app:layout_constraintEnd_toEndOf="@id/et_signUp_num"
+        app:layout_constraintTop_toBottomOf="@id/btn_signUp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_button_black"
+        android:visibility="gone"
+        />
+
+        <TextView
+            android:id="@+id/btn_skip"
             android:layout_width="0dp"
             android:layout_height="@dimen/_35sdp"
-            android:text="Delivery Address"
+            android:text="@string/skip"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="@id/et_signUp_num"
             app:layout_constraintEnd_toEndOf="@id/et_signUp_num"
             app:layout_constraintTop_toBottomOf="@id/btn_signUp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:textColor="@color/white"
-            android:background="@drawable/rounded_button_black"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textColor="@color/purple_500"
+            android:textStyle="bold"
+            android:textSize="@dimen/_15ssp"
             android:visibility="gone"
             />
 
@@ -175,4 +195,4 @@
             android:layout_marginBottom="@dimen/_30sdp"
             />
 -->    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

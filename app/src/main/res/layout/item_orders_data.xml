@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="@dimen/_5sdp"
     app:cardElevation="@dimen/_5sdp"
-    app:cardCornerRadius="@dimen/_5sdp">
+    app:cardUseCompatPadding="true">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -15,53 +16,63 @@
             android:id="@+id/o_img"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_100sdp"
-            android:src="@drawable/order_clothes"
             android:scaleType="fitXY"
+            android:src="@drawable/order_clothes"
             tools:ignore="MissingConstraints" />
 
         <LinearLayout
             android:id="@+id/linear_o_data_holder"
-            android:layout_width="@dimen/_100sdp"
+            android:layout_width="@dimen/_120sdp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/o_img"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:orientation="horizontal"
-            >
+            app:layout_constraintStart_toEndOf="@id/o_img"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
                     android:text="Order:"
-                    android:textSize="@dimen/_8ssp"
                     android:textColor="@color/black"
-                    />
+                    android:textSize="@dimen/_8ssp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
                     android:text="Status:"
-                    android:textSize="@dimen/_8ssp"
-                    android:textColor="@color/black" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Price:"
-                    android:textSize="@dimen/_8ssp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8ssp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Price:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8ssp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Trial Date:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8ssp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
                     android:text="Delivery Date:"
-                    android:textSize="@dimen/_8ssp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8ssp" />
 
                 <!--<TextView
                     android:id="@+id/txt_o_id"
@@ -75,31 +86,45 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/txt_o_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
                     android:text="#1060"
                     android:textSize="@dimen/_8ssp" />
+
                 <TextView
                     android:id="@+id/txt_o_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
                     android:text="Active"
-                    android:textSize="@dimen/_8ssp"/>
+                    android:textSize="@dimen/_8ssp" />
+
                 <TextView
-                android:id="@+id/txt_o_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1233"
-                android:textSize="@dimen/_8ssp" />
+                    android:id="@+id/txt_o_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="1233"
+                    android:textSize="@dimen/_8ssp" />
+                <TextView
+                    android:id="@+id/txt_trial_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="2022-08-27"
+                    android:textSize="@dimen/_8ssp" />
+
                 <TextView
                     android:id="@+id/txt_o_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
                     android:text="2022-08-27"
                     android:textSize="@dimen/_8ssp" />
             </LinearLayout>
@@ -107,31 +132,35 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="@dimen/_50sdp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_7sdp"
-            app:layout_constraintTop_toBottomOf="@id/linear_o_data_holder"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linear_o_data_holder"
 
             >
-            <!--<ImageView
+            &lt;!&ndash;<ImageView
                 android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_20sdp"
                 android:src="@drawable/ic_baseline_edit_24"
                 android:layout_weight="1"
                 android:padding="@dimen/_2sdp"
-                android:layout_gravity="center"/>-->
-            <ImageView
-                android:id="@+id/img_del"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:src="@drawable/ic_delete"
-                android:layout_weight="1"
-                android:padding="@dimen/_2sdp"
-                android:layout_gravity="center"/>
-        </LinearLayout>
+                android:layout_gravity="center"/>&ndash;&gt;
 
+        </LinearLayout>-->
+        <ImageView
+            android:id="@+id/img_del"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

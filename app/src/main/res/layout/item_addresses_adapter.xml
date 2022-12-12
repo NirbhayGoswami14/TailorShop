@@ -7,7 +7,61 @@
     app:cardCornerRadius="@dimen/_10sdp"
     app:cardElevation="@dimen/_3sdp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            />
+        <TextView
+            android:id="@+id/txt_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="field1"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            />
+
+        <LinearLayout
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/_5sdp">
+            <ImageView
+                android:id="@+id/img_edit"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/ic_baseline_edit_24"
+                android:padding="@dimen/_5sdp"
+                android:background="?attr/selectableItemBackground"
+                android:layout_weight="1"/>
+            <ImageView
+                android:id="@+id/img_del"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/ic_delete"
+                android:padding="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -82,5 +136,5 @@
                 android:background="?attr/selectableItemBackground"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
+-->
 </androidx.cardview.widget.CardView>

@@ -3,39 +3,39 @@
 
     <item
         android:id="@+id/user_profile"
-        android:icon="@drawable/ic_user_name"
+        android:icon="@drawable/user_side"
         android:title="Profile" />
     <item
         android:id="@+id/user_orders"
-        android:icon="@drawable/ic_order"
+        android:icon="@drawable/order_list_side"
         android:title="My Orders"
         />
     <item
         android:id="@+id/contact_us"
-        android:icon="@drawable/ic_contact_support"
+        android:icon="@drawable/support_side"
         android:title="Contact us" />
     <item
         android:id="@+id/share_app"
-        android:icon="@drawable/ic_share"
+        android:icon="@drawable/shared_side"
         android:title="Share App" />
-    <item
+   <!-- <item
         android:id="@+id/review"
         android:icon="@drawable/ic_reviews"
         android:title="Reviews" />
-
+-->
     <item
         android:id="@+id/faq"
-        android:icon="@drawable/ic_reviews"
+        android:icon="@drawable/question_side"
         android:title="FAQ" />
 
-    <item
+    <!--<item
         android:id="@+id/setting"
         android:icon="@drawable/ic_baseline_settings_24"
         android:title="Setting" />
-
+-->
     <item
         android:id="@+id/logout"
-        android:icon="@drawable/ic_baseline_logout_24"
+        android:icon="@drawable/logout_side"
         android:title="Logout" />
 
 </menu>

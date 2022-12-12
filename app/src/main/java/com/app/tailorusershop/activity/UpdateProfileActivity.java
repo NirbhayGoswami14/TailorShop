@@ -43,7 +43,19 @@ public class UpdateProfileActivity extends AppCompatActivity {
         binding=ActivityUpdateProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+
         mobile_no = getIntent().getStringExtra("mobile");
+        binding.btnSkip.setVisibility(View.VISIBLE);
+        binding.btnSkip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PrefManager.getInstance(context).setIsLogin(true);
+                startActivity(new Intent(context,HomeActivity.class));
+                finish();
+            }
+        });
+
       /*  binding.radiogrpGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -105,7 +117,6 @@ public class UpdateProfileActivity extends AppCompatActivity {
             return false;
         }
 
-
         return true;
     }
     private void callUpdateProfileApi(String name,String mobile,String email,String gender)
@@ -122,7 +133,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
         }
         RequestBody requestBody=RequestBody.create(MediaType.parse("application/json"),object.toString());
 
-        new CallWebService(this, WebServiceConstants.BASE_URL + WebServiceConstants.UPDATE, requestBody, new HashMap<String, String>(), UpdateProfileResponse.class, CallWebService.APIType.POST_WITH_BODY_NO_HEADER, null, null, true, new ResponseHandler() {
+        new CallWebService(this, WebServiceConstants.BASE_URL + WebServiceConstants.UPDATE_PROFILE, requestBody, new HashMap<String, String>(), UpdateProfileResponse.class, CallWebService.APIType.POST_WITH_BODY_NO_HEADER, null, null, true, new ResponseHandler() {
             @Override
             public void onSuccess(Object response)
             {
@@ -131,7 +142,10 @@ public class UpdateProfileActivity extends AppCompatActivity {
                 {
 
                     Util.showSnack("Profile Updated",binding.getRoot());
+                    PrefManager.getInstance(context).setIsLogin(true);
                     startActivity(new Intent(context,HomeActivity.class));
+                    finish();
+
                 }
             }
 

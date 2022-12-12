@@ -84,6 +84,12 @@ public class LoginActivity extends AppCompatActivity {
                 //Toast.makeText(context, loginResponse.getData().get(0).otp, Toast.LENGTH_SHORT).show();
                 if(loginResponse.getStatus().equals("success"))
                 {
+                    PrefManager.getInstance(context).setUserDetails(PrefManager.USER_ID,loginResponse.getData().getId());
+                    PrefManager.getInstance(context).setUserDetails(PrefManager.USER_NM,loginResponse.getData().getName());
+                    PrefManager.getInstance(context).setUserDetails(PrefManager.USER_MOBILE,loginResponse.getData().getMobileNo());
+                    PrefManager.getInstance(context).setUserDetails(PrefManager.USER_EMAIL,loginResponse.getData().getEmail());
+                    PrefManager.getInstance(context).setUserDetails(PrefManager.USER_GENDER,loginResponse.getData().getGender());
+
                     /*PrefManager.getInstance(context).setUserDetails(PrefManager.USER_ID,loginResponse.getData().get(0).id);
                     PrefManager.getInstance(context).setUserDetails(PrefManager.USER_NM,loginResponse.getData().get(0).name);
                     PrefManager.getInstance(context).setUserDetails(PrefManager.USER_MOBILE,loginResponse.getData().get(0).mobileNo);
@@ -91,7 +97,6 @@ public class LoginActivity extends AppCompatActivity {
                     PrefManager.getInstance(context).setUserDetails(PrefManager.USER_ADDRESS,loginResponse.getData().get(0).address);
                     PrefManager.getInstance(context).setUserDetails(PrefManager.USER_GENDER,loginResponse.getData().get(0).gender);*/
                     startActivity(new Intent(context,OtpVerificationActivity.class).putExtra("mobile",binding.etLoginNum.getText().toString()));
-
                     finish();
                     //PrefManager.getInstance(context).setUpdateProfile(false);
 
@@ -102,9 +107,6 @@ public class LoginActivity extends AppCompatActivity {
             {
                 Log.d(TAG, "onSuccess:"+e.toString());
             }
-
-
-
 
             }
 

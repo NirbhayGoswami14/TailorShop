@@ -6,6 +6,8 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Editable;
@@ -14,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.app.tailorusershop.R;
 import com.app.tailorusershop.databinding.ActivityOtpVerificationBinding;
 import com.app.tailorusershop.responses.OtpResponse;
 import com.app.tailorusershop.responses.VerifyOtpResponse;
@@ -40,7 +43,7 @@ public class OtpVerificationActivity extends AppCompatActivity implements TextWa
     private String otpCode = "";
     private String resOtp = "";
     private String mobile_no = "";
-   // private boolean resend=false;
+    private boolean resend=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,12 +91,12 @@ public class OtpVerificationActivity extends AppCompatActivity implements TextWa
         binding.txtResend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*if (resend)
+                if (resend)
                 {
-                    getOTP(mobile_no);
+                    sendOTP(mobile_no);
                     resend=false;
                     reSendOtp();
-                }*/
+                }
             }
         });
     }
@@ -115,8 +118,19 @@ public class OtpVerificationActivity extends AppCompatActivity implements TextWa
             @Override
             public void onSuccess(Object response) {
                 VerifyOtpResponse verifyOtpResponse=(VerifyOtpResponse) response;
-                if(verifyOtpResponse.getMessage().equals("Otp verified"))
+                PrefManager.getInstance(context).setUserDetails(PrefManager.USER_ID,verifyOtpResponse.getData().getId());
+                if(verifyOtpResponse.getMessage().equals("Otp verified")&&PrefManager.getInstance(context).getUserDetails(PrefManager.USER_NM).equals(""))
                 {
+                    startActivity(new Intent(context,UpdateProfileActivity.class).putExtra("mobile",mobile_no));
+                    finish();
+                }
+                else if (verifyOtpResponse.getMessage().equals("Otp verified"))
+                {
+                    PrefManager.getInstance(context).setUserDetails(PrefManager.USER_ID,verifyOtpResponse.getData().getId());
+                    PrefManager.getInstance(context).setUserDetails(PrefManager.USER_NM,verifyOtpResponse.getData().getName());
+                    PrefManager.getInstance(context).setUserDetails(PrefManager.USER_MOBILE,verifyOtpResponse.getData().getMobileNo());
+                    PrefManager.getInstance(context).setUserDetails(PrefManager.USER_EMAIL,verifyOtpResponse.getData().getEmail());
+                    PrefManager.getInstance(context).setUserDetails(PrefManager.USER_GENDER,verifyOtpResponse.getData().getGender());
                     startActivity(new Intent(context, HomeActivity.class));
                     finish();
                     PrefManager.getInstance(context).setIsLogin(true);
@@ -136,11 +150,11 @@ public class OtpVerificationActivity extends AppCompatActivity implements TextWa
         });
         }
 
-    void getOTP(String mobile_no) {
-        /*if(resend)
+    void sendOTP(String mobile_no) {
+        if(resend)
         {
             Util.showSnack("Otp Resend",binding.getRoot());
-        }*/
+        }
         JSONObject object = new JSONObject();
         try {
             object.put(WebServiceConstants.WebServiceParams.MOBILE, mobile_no);
@@ -149,7 +163,7 @@ public class OtpVerificationActivity extends AppCompatActivity implements TextWa
         }
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), object.toString());
 
-        new CallWebService(this, WebServiceConstants.BASE_URL + WebServiceConstants.OTP, requestBody, new HashMap<String, String>(), OtpResponse.class, CallWebService.APIType.POST_WITH_BODY_NO_HEADER, null, null, true, new ResponseHandler() {
+        new CallWebService(this, WebServiceConstants.BASE_URL + WebServiceConstants.SEND_OTP, requestBody, new HashMap<String, String>(), OtpResponse.class, CallWebService.APIType.POST_WITH_BODY_NO_HEADER, null, null, true, new ResponseHandler() {
             @Override
             public void onSuccess(Object response) {
                 OtpResponse response1 = (OtpResponse) response;
@@ -174,7 +188,9 @@ public class OtpVerificationActivity extends AppCompatActivity implements TextWa
 
 
 
+
     void reSendOtp() {
+        binding.txtResend.setTextColor(Color.BLACK);
         new CountDownTimer(30000, 1000) {
             @SuppressLint("SetTextI18n")
             @Override
@@ -183,11 +199,12 @@ public class OtpVerificationActivity extends AppCompatActivity implements TextWa
                 binding.txtResend.setText("Resend otp in " + sec);
             }
 
-            @SuppressLint("SetTextI18n")
+
             @Override
             public void onFinish() {
-                //resend=true;
+                resend=true;
                 binding.txtResend.setText("Resend Otp");
+                binding.txtResend.setTextColor(getResources().getColor(R.color.purple_500));
             }
         }.start();
     }

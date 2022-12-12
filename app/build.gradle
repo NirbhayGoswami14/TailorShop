@@ -70,8 +70,8 @@ dependencies {
 
     //avatar imageview
    implementation "io.getstream:avatarview-coil:1.0.7"
-//    implementation "io.getstream:avatarview-glide:1.0.7"
 
-    //implementation "io.getstream:avatarview-glide:4.13.0"
-
+   /* //pdf-viewer
+    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+*/
 }

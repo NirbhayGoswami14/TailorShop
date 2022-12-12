@@ -1,5 +1,6 @@
 package com.app.tailorusershop.adapter;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.tailorusershop.R;
 import com.app.tailorusershop.activity.GalleryImagesActvity;
+import com.app.tailorusershop.databinding.ImageShowDialogBinding;
 import com.app.tailorusershop.databinding.ItemGalleryImagesAdapterBinding;
 import com.bumptech.glide.Glide;
 
@@ -33,6 +35,10 @@ public class GalleryImageAdapter extends RecyclerView.Adapter<GalleryImageAdapte
 
     @Override
     public void onBindViewHolder(@NonNull GalleryImageAdapter.HOLDER holder, int position) {
+
+        holder.itemView.setOnClickListener(view -> {
+            imageDialog(imgList.get(position));
+        });
         Glide.with(context).load(imgList.get(position)).placeholder(R.drawable.order_clothes).into(holder.binding.galleryImg);
     }
 
@@ -47,5 +53,14 @@ public class GalleryImageAdapter extends RecyclerView.Adapter<GalleryImageAdapte
             super(itemView.getRoot());
             binding=itemView;
         }
+    }
+
+    private void imageDialog(String img)
+    {
+        ImageShowDialogBinding binding=ImageShowDialogBinding.inflate(LayoutInflater.from(context));
+        Dialog dialog=new Dialog(context);
+        dialog.setContentView(binding.getRoot());
+        Glide.with(context).load(img).placeholder(R.drawable.order_clothes).into(binding.img);
+        dialog.show();
     }
 }

@@ -55,12 +55,21 @@ public class Product {
     @SerializedName("pattern_image2")
     @Expose
     private String patternImage2;
+
+    @SerializedName("is_invoice_show")
+    @Expose
+    private String isInvoiceShow;
+
     @SerializedName("prodMeasurements")
     @Expose
     private List<ProdMeasurement> prodMeasurements = null;
     @SerializedName("prodAttr")
     @Expose
     private List<ProdAttr> prodAttr = null;
+
+    public String getIsInvoiceShow() {
+        return isInvoiceShow;
+    }
 
     public String getId() {
         return id;

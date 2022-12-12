@@ -3,22 +3,37 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/drawable/full_rounded_edit_text.xml" value="0.225" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.225" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/activity_add_address.xml" value="0.25" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/activity_add_order.xml" value="0.21822916666666667" />
         <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/activity_add_review.xml" value="0.21822916666666667" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/activity_categories.xml" value="0.21822916666666667" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/activity_delivery_address.xml" value="0.21822916666666667" />
         <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/activity_gallery_images_actvity.xml" value="0.21822916666666667" />
         <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/activity_home.xml" value="0.21822916666666667" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/activity_invoice.xml" value="0.21822916666666667" />
         <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/activity_login.xml" value="0.21822916666666667" />
         <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/activity_order_details.xml" value="0.21822916666666667" />
         <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/activity_otp_verification.xml" value="0.21822916666666667" />
         <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/activity_profile.xml" value="0.21822916666666667" />
         <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/activity_review_list.xml" value="0.21822916666666667" />
-        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/activity_update_profile.xml" value="0.21822916666666667" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/activity_update_profile.xml" value="0.2" />
         <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/delete_dialog_layout.xml" value="0.21822916666666667" />
         <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/fragment_gallery.xml" value="0.264" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/fragment_orderlist.xml" value="0.21822916666666667" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/image_show_dialog.xml" value="0.21822916666666667" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/item_addresses_adapter.xml" value="0.21822916666666667" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/item_categories_adapter.xml" value="0.21822916666666667" />
         <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/item_gallery_images_adapter.xml" value="0.21822916666666667" />
-        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/item_orders_data.xml" value="0.2" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/item_order_status.xml" value="0.21822916666666667" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/item_orders_data.xml" value="0.4" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/item_pattern_image.xml" value="0.21822916666666667" />
         <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/item_review_list_adapter.xml" value="0.264" />
         <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/nav_header.xml" value="0.21822916666666667" />
-        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/user_dialog_layout.xml" value="0.21822916666666667" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/request_permission_dialog_layout.xml" value="0.21822916666666667" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/layout/user_dialog_layout.xml" value="0.264" />
+        <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/menu/invoice_menu.xml" value="0.21822916666666667" />
         <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/menu/side_menu.xml" value="0.21822916666666667" />
         <entry key="..\:/Nice Umang/TailorShop/app/src/main/res/menu/view_review_menu.xml" value="0.1" />
       </map>

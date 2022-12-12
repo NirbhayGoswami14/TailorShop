@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.tailorusershop.R;
@@ -52,8 +53,21 @@ public class HomeActivity extends AppCompatActivity {
         binding.navDrawer.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
-        headerView=binding.sideNav.getHeaderView(0);
-        AvatarView avatarView=headerView.findViewById(R.id.img1);
+        headerView = binding.sideNav.getHeaderView(0);
+        AvatarView avatarView = headerView.findViewById(R.id.img1);
+        TextView textView=headerView.findViewById(R.id.txt_header_user_name);
+
+        if(PrefManager.getInstance(context).getUserDetails(PrefManager.USER_NM).equals(""))
+        {
+                textView.setText(PrefManager.getInstance(context).getUserDetails(PrefManager.USER_MOBILE));
+                avatarView.setAvatarInitials("T");
+        }
+        else
+        {
+            textView.setText(PrefManager.getInstance(context).getUserDetails(PrefManager.USER_NM));
+            String avtarS= String.valueOf(PrefManager.getInstance(context).getUserDetails(PrefManager.USER_NM).charAt(0));
+            avatarView.setAvatarInitials(avtarS);
+        }
 
         /*binding.linearProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,13 +175,11 @@ public class HomeActivity extends AppCompatActivity {
                             e.toString();
                         }
                         break;
-                    case R.id.review:
+                   /* case R.id.review:
                         startActivity(new Intent(context, AddReviewActivity.class));
                         binding.navDrawer.close();
                         break;
-                    case R.id.faq:
-                        break;
-                    case R.id.setting:
+                   */ case R.id.faq:
                         break;
                     case R.id.logout:
                         logoutDialog();
@@ -192,7 +204,8 @@ public class HomeActivity extends AppCompatActivity {
             return true;
         }
         if (item.getItemId() == R.id.add) {
-            Toast.makeText(context, "ok", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(context,CategoriesActivity.class));
+            //Toast.makeText(context, "ok", Toast.LENGTH_SHORT).show();
         }
         /*else if(item.getItemId()==android.R.id.home)
         {
@@ -200,6 +213,7 @@ public class HomeActivity extends AppCompatActivity {
         }*/
         return super.onOptionsItemSelected(item);
     }
+
     private void contactUsDialog() {
         UserDialogLayoutBinding binding = UserDialogLayoutBinding.inflate(getLayoutInflater());
         AlertDialog.Builder dialog = new AlertDialog.Builder(context);
@@ -213,11 +227,30 @@ public class HomeActivity extends AppCompatActivity {
         });
         binding.txtTitle.setText("Contact Us");
         binding.txtMobileNo.setText("+917827466910");
+        binding.txtMobileNo.setOnClickListener(view ->{
+            startActivity(new Intent(Intent.ACTION_DIAL).setData(Uri.parse("tel:7827466910")));});
+
+        binding.imgWp.setOnClickListener(view -> {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse("https://api.whatsapp.com/send?phone=+917827466910"));
+            context.startActivity(i);
+        });
         binding.txtEmail.setText("testemail@gmail.com");
+        try {
+            binding.txtEmail.setOnClickListener(view -> {
+                Intent intent=new Intent(Intent.ACTION_VIEW,Uri.parse("mailto:testemail@gmail.com"));
+                startActivity(intent);
+            });
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
         dialog.create();
         dialog.show();
 
     }
+
     void loadFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction().replace(R.id.frame1, fragment).commit();
     }
@@ -236,7 +269,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 PrefManager.getInstance(context).clearPref();
                 PrefManager.getInstance(context).setIsLogin(false);
-                startActivity(new Intent(context,LoginActivity.class));
+                startActivity(new Intent(context, LoginActivity.class));
                 finish();
                 dialogInterface.dismiss();
             }

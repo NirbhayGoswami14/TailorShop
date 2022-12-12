@@ -26,10 +26,10 @@ public class LocationActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Locations");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
-        setUpRecyclerView();
+       // setUpRecyclerView();
     }
 
-    private void setUpRecyclerView()
+  /*  private void setUpRecyclerView()
     {
         AddressAdapter addressAdapter = new AddressAdapter(context);
         binding.rcAddresses.setLayoutManager(new LinearLayoutManager(context));
@@ -42,5 +42,5 @@ public class LocationActivity extends AppCompatActivity {
             onBackPressed();
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }

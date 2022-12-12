@@ -126,4 +126,10 @@ public class ReviewListActivity extends AppCompatActivity implements GetReviewsA
                 .putExtra(WebServiceConstants.WebServiceParams.COMMENT,reviewData.getComments())
         .putExtra("review_tag","update"));
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getReviews();
+    }
 }

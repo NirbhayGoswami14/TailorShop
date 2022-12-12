@@ -9,7 +9,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView_kurti_holder"
         android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_100sdp"
+        android:layout_height="@dimen/_120sdp"
         app:cardCornerRadius="@dimen/_10sdp"
         app:cardUseCompatPadding="true"
         app:cardElevation="@dimen/_5sdp"
@@ -25,16 +25,19 @@
             android:orientation="vertical">
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
-                android:src="@drawable/kurti_image"/>
+                android:layout_height="@dimen/_65sdp"
+                android:src="@drawable/kurti_image"
+                android:layout_marginTop="@dimen/_5sdp"/>
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Kurti"
                 android:textSize="@dimen/_15ssp"
                 android:gravity="center"
                 android:textColor="@color/black"
+                android:layout_gravity="bottom|center"
+
                 />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -42,7 +45,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView_blouse_holder"
         android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_100sdp"
+        android:layout_height="@dimen/_120sdp"
         app:cardCornerRadius="@dimen/_10sdp"
         app:cardUseCompatPadding="true"
         app:cardElevation="@dimen/_5sdp"
@@ -54,8 +57,9 @@
             android:orientation="vertical">
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
-                android:src="@drawable/blouse"/>
+                android:layout_height="@dimen/_65sdp"
+                android:src="@drawable/blouse"
+                android:layout_marginTop="@dimen/_5sdp"/>
 
             <TextView
                 android:layout_width="match_parent"

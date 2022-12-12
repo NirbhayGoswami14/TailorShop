@@ -18,6 +18,8 @@ public class PrefManager {
    public static String USER_VID="vid";
    public static String IS_LOGIN="islogin";
    public static String UPDATE_PROFILE="update_profile";
+   public static String IS_SKIPPED="isSkipped";
+    private  static String RUPEE_UNICODE="rupee";
 
 
     public PrefManager(Context context) {
@@ -43,6 +45,10 @@ public class PrefManager {
     {
         editor.putBoolean(IS_LOGIN,isLogin).commit();
     }
+    public void setIsSkipped(Boolean isSkip)
+    {
+        editor.putBoolean(IS_SKIPPED,isSkip).commit();
+    }
 
     public void setUpdateProfile(Boolean updateProfile)
     {
@@ -52,10 +58,14 @@ public class PrefManager {
     {
         return sharedPreferences.getString(key,"");
     }
-
+    public String getRupeeUnicode(){return sharedPreferences.getString(RUPEE_UNICODE,"\u20B9");}
     public boolean isLogin()
     {
         return sharedPreferences.getBoolean(IS_LOGIN,false);
+    }
+    public boolean isSkipped()
+    {
+        return sharedPreferences.getBoolean(IS_SKIPPED,false);
     }
     public boolean isUpdate(){return sharedPreferences.getBoolean(UPDATE_PROFILE,false);}
 

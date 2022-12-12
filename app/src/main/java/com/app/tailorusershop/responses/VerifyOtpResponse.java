@@ -41,21 +41,37 @@ public class VerifyOtpResponse {
 
     public class VerifyData {
 
-        @SerializedName("id")
+        @SerializedName("user_id")
         @Expose
-        private String id;
+        private String id="";
+
+
+        @SerializedName("name")
+        @Expose
+        public String name="";
+
+        @SerializedName("email")
+        @Expose
+        public String email="";
+
         @SerializedName("mobile_no")
         @Expose
-        private String mobileNo;
-        @SerializedName("otp")
+        public String mobileNo="";
+
+        @SerializedName("gender")
+        @Expose
+        public String gender="";
+
+        /*@SerializedName("otp")
         @Expose
         private String otp;
-        @SerializedName("type")
+*/        @SerializedName("type")
         @Expose
-        private String type;
+        private String type="";
+
         @SerializedName("insert_date")
         @Expose
-        private String insertDate;
+        private String insertDate="";
 
         public String getId() {
             return id;
@@ -65,12 +81,16 @@ public class VerifyOtpResponse {
             return mobileNo;
         }
 
-        public String getOtp() {
-            return otp;
+        public String getName() {
+            return name;
         }
 
-        public String getType() {
-            return type;
+        public String getEmail() {
+            return email;
+        }
+
+        public String getGender() {
+            return gender;
         }
 
         public String getInsertDate() {
